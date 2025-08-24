@@ -43,7 +43,7 @@ pipeline{
                 }
             }
             steps {
-                error('Build has failed')
+                error('Build has failed, no label produced and not promoted as a production candidate')
             }
         }
         stage('Success Reporting') {
