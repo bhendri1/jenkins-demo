@@ -43,7 +43,17 @@ pipeline{
                 }
             }
             steps {
-                echo 'Build has failed'
+                error('Build has failed')
+            }
+        }
+        stage('Success Reporting') {
+            when {
+                expression {
+                    return env.TEST_EXIT_CODE == '0'
+                }
+            }
+            steps {
+                echo 'Build Success adding label and running promotion to production script'
             }
         }
     }
