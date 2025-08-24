@@ -29,6 +29,7 @@ pipeline{
                 echo 'Testing ...'
                 echo '...'
                 echo '...'
+                sh 'chmod +x ./run.sh'
                 sh './run.sh test'
             }
         }
