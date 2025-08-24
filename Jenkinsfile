@@ -30,8 +30,10 @@ pipeline{
                 echo '...'
                 echo '...'
                 sh 'chmod +x ./run.sh'
-                def exitCode = sh(script: './run.sh test', returnStatus: true)
-                env.TEST_EXIT_CODE = exitCode.toString()
+                script {
+                    def exitCode = sh(script: './run.sh test', returnStatus: true)
+                    env.TEST_EXIT_CODE = exitCode.toString()
+                }
             }
         }
         stage('Failure Reporting') {
