@@ -6,6 +6,11 @@ pipeline{
     }
 
     stages{
+        stage('Checkout'){
+            steps{
+                checkout scm
+            }
+        }
         stage('pre-Build') {
             steps {
                 echo 'Preparing ...'
@@ -24,7 +29,7 @@ pipeline{
                 echo 'Testing ...'
                 echo '...'
                 echo '...'
-                sh 'source ./run.sh test'
+                sh './run.sh test'
             }
         }
     }
