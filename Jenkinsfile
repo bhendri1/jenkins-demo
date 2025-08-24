@@ -24,7 +24,7 @@ pipeline{
                 echo 'Testing ...'
                 echo '...'
                 echo '...'
-                sh './run.sh test'
+                sh '. ./run.sh test'
             }
         }
     }
